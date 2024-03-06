@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - World
+  - Player Bullet
+  - Enemy Bullet
+  - jumpDot
+  - originDot
+  - Boss1_1
+  - Boss1_2
+  - BossBulletCollider
+  - Enemy Spawner
+  - Shop
+  - HpManager
+  - sItemBox
+  - normalItemBox
+  - Stage Manager
+  - Boss2
+  - OriginPositionCheck
+  - Boss2Wall
+  - Stage Fail Ui
+  - Stage Success Ui
+  - ItemList
+  - ItemUseEffect
+  - playerBulletPool
+  - enemyBulletPool
+  - enemy5TrailPool
+  - enemy6BabyPool
+  - enemySpawnerPool
+  - enemy1BulletPool
+  - enemy4BulletPool
+  - boss2BulletPool
+  - boss1_1EffectPool
+  - boss1_2EffectPool
+  - roomManager
+  - eventSystem
+  - poolGroup
+  - gameManager
+  - uiManager
+  - mainUI
+  - Audio
+  - wall
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - World
+  - Water
+  - UI
+  - Enemy
+  - MiniMap
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

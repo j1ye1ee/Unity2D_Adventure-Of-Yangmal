@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6240658193549591330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6240658193549591331}
+  - component: {fileID: 6240658193549591332}
+  m_Layer: 0
+  m_Name: Boss1_2 Effect Pool
+  m_TagString: boss1_2EffectPool
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6240658193549591331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240658193549591330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6240658193549591332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240658193549591330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 392b860cdb58620419a9985e7e1e5421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _boss1_2Eft: {fileID: 5370318773427034364, guid: 26fb7a56539baf2469b912d5d9e65829, type: 3}
+  _boss1_2EftPool: []
+  _shadow: {fileID: 8873369063016083325, guid: 6f8d73ff0e529ad46b82e2cfd6a13ab2, type: 3}
+  _shadowPool: []
+  _parabolaSpot: {fileID: 2848155591734392, guid: d9ba589187a317d44baa8228b83898d6, type: 3}
+  _parabolaSpotPool: []

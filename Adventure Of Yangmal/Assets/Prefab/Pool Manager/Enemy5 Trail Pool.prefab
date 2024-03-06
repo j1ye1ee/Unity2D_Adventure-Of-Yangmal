@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7675316390543883558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7675316390543883553}
+  - component: {fileID: 7675316390543883552}
+  m_Layer: 0
+  m_Name: Enemy5 Trail Pool
+  m_TagString: enemy5TrailPool
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7675316390543883553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675316390543883558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7675316390543883552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7675316390543883558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f1036cbf154a704db7b5a9750e1c298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _t1: {fileID: 7429024433133657021, guid: f4aade96903252e46b11046a2455fb66, type: 3}
+  _t2: {fileID: 7071985051219625539, guid: c7102eba7933d0748bf69f7bdb0242c9, type: 3}
+  _t3: {fileID: 5066873604662176309, guid: b9972fffb67eca445886b80c54b2890d, type: 3}
+  _t4: {fileID: 7731738657464278389, guid: cdc7166390a826f4faedb6e8a058c3d5, type: 3}
+  _t5: {fileID: 6477265380964662909, guid: 1a8594003e4af8a44a5959f323c9eb65, type: 3}
+  _t1Pool: []
+  _t2Pool: []
+  _t3Pool: []
+  _t4Pool: []
+  _t5Pool: []
