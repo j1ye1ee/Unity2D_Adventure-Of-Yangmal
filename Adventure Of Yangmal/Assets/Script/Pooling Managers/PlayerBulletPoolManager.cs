@@ -14,7 +14,8 @@ public class PlayerBulletPoolManager : PoolManager
                 return null;
             }
 
-            return instance;
+            else
+                return instance;
         }
     }
 
@@ -67,7 +68,7 @@ public class PlayerBulletPoolManager : PoolManager
 
 
 
-    // 프리팹 리셋 및 게임 재시작시 풀 초기화
+    // 게임 재시작시 풀 초기화
     public void ResetAllBullet()
     {
         ResetPrefab();
@@ -93,10 +94,39 @@ public class PlayerBulletPoolManager : PoolManager
         }
 
         // 재생성
+        InstantiatePool(_playerBulletPool, _playerBulletPrefab, 10);
+        InstantiatePool(_bombPool, _bombPrefab, 5);
+        InstantiatePool(_guideMissilePool, _guideMissilePrefab, 5);
 
+    }
+
+    // 데미지업 아이템 사용시 풀 초기화
+    public void DamageUpPoolSet()
+    {
+
+        // 총알 pool 모두 삭제
+        for (int i = 0; i < _playerBulletPool.Count; i++)
+        {
+            Destroy(_playerBulletPool[i].gameObject);
+        }
+
+
+        // 폭탄 pool 모두 삭제
+        for (int i = 0; i < _bombPool.Count; i++)
+        {
+            Destroy(_bombPool[i].gameObject);
+        }
+
+
+        // 미사일 pool 모두 삭제
+        for (int i = 0; i < _guideMissilePool.Count; i++)
+        {
+            Destroy(_guideMissilePool[i].gameObject);
+        }
+
+        // 재생성
         ResetPool(_playerBulletPool, _playerBulletPrefab, 10);
         ResetPool(_bombPool, _bombPrefab, 5);
         ResetPool(_guideMissilePool, _guideMissilePrefab, 5);
-
     }
 }

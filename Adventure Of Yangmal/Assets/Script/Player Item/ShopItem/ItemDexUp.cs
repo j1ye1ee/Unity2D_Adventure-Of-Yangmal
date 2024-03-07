@@ -25,7 +25,7 @@ public class ItemDexUp : ShopItem, IPlayerItem
         PlayerStatus playerStatus = GameObject.FindWithTag("Player").GetComponent<PlayerStatus>();
 
         // 방어력 up 아이템 사용시 플레이어의 최대 방어력을 넘게 된다면 maxDex로 설정
-        if (playerStatus._dex + _dexUp >= _maxValue)
+        if (playerStatus._def + _dexUp >= _maxValue)
             PlayerStatus.Instance.PlayerDexSet(_maxValue);
 
         // 아닌 경우라면 아이템 정상 적용
@@ -40,7 +40,7 @@ public class ItemDexUp : ShopItem, IPlayerItem
     {
         PlayerStatus playerStatus = PlayerStatus.Instance;
 
-        if (playerStatus._dex >= _maxValue)
+        if (playerStatus._def >= _maxValue)
             _isMaxValue = true;
         else
             _isMaxValue = false;

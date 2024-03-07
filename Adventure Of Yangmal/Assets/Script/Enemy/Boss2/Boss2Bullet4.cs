@@ -5,7 +5,6 @@ using UnityEngine;
 public class Boss2Bullet4 : MonoBehaviour
 {
     public float _damage;
-    public PlayerStatus _playerStatus;
     Boss2Bullet4Count _parent;
 
 
@@ -16,7 +15,6 @@ public class Boss2Bullet4 : MonoBehaviour
         if (!GameManager.Instance._isGameOver)
         {
             _damage = FindObjectOfType<Boss2>()._damage;
-            _playerStatus = GameObject.FindWithTag("Player").GetComponent<PlayerStatus>();
         }
         _parent = transform.GetComponentInParent<Boss2Bullet4Count>();
     }
@@ -28,10 +26,10 @@ public class Boss2Bullet4 : MonoBehaviour
         if (!GameManager.Instance._isGameOver)
         {
             // 살아있는 플레이어와 충돌시
-            if (other.tag == "Player" && _playerStatus._curState == PlayerStatus.ePLAYER_STATE.ALIVE)
+            if (other.tag == "Player" && PlayerStatus.Instance._curState == PlayerStatus.ePLAYER_STATE.ALIVE)
             {
                 // 플레이어 데미지 효과
-                _playerStatus.PlayerGetDamage(_damage);
+                PlayerStatus.Instance.PlayerGetDamage(_damage);
 
                 _parent._count++;
                 if (_parent._count == 2)

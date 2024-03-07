@@ -15,7 +15,7 @@ public class UiManager : Singleton<UiManager>
     [SerializeField]
     Text _playerDamage;
     [SerializeField]
-    Text _playerDex;
+    Text _playerDef;
     [SerializeField]
     Text _playerGold;
 
@@ -55,8 +55,8 @@ public class UiManager : Singleton<UiManager>
     // 메인 ui의 플레이어 방어력 변경
     public void SetPlayerDex()
     {
-        float dex = PlayerStatus.Instance._dex;
-        _playerDex.text = "DEX "+dex.ToString();
+        float def = PlayerStatus.Instance._def;
+        _playerDef.text = "DEF "+def.ToString();
     }
 
     // 메인 ui의 플레이어 골드 변경

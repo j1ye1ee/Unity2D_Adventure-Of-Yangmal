@@ -94,6 +94,7 @@ ScriptsOnlyBuild:
     - PlayerStatus
     - ProtectBoss2
     - ReadySceneSet
+    - ReviveKey
     - Room
     - SItemBomb
     - SItemButterfly
@@ -1574,6 +1575,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8046}
     - Class: 114
       Script: {instanceID: 8210}
+    - Class: 114
+      Script: {instanceID: 34914}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2751,7 +2754,7 @@ ScriptsOnlyBuild:
     className: ShadowsMidtonesHighlights
   - hash:
       serializedVersion: 2
-      Hash: 9cbcf76cda4933d4307da142a4ce550d
+      Hash: a1e59340680da9afa62635a185add98f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UiManager
@@ -3069,7 +3072,7 @@ ScriptsOnlyBuild:
     className: Light2D
   - hash:
       serializedVersion: 2
-      Hash: 43cfc17cd62a295ec48e84ac1bb00877
+      Hash: 3b81451eb3daf1cb0bb59ecbaf9bc966
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Boss2Bullet4
@@ -3979,6 +3982,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Boss1_1
+  - hash:
+      serializedVersion: 2
+      Hash: 33d62e86fe93ba4f6dde5ba06e1f2dc7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ReviveKey
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainScene.unity
@@ -3997,4 +4006,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Boss2.unity
   - Assets/Scenes/EndingScene.unity
   playerPath: "C:/Users/suji1/OneDrive/\uBC14\uD0D5 \uD654\uBA74/\uC9C0\uC608\uC7A1\uB3D9\uC0AC\uB2C8/\uC644\uC131\uD55C
-    \uAC8C\uC784/Adventure Of Yangmal/Adventure Of Yangmal.exe"
+    \uAC8C\uC784/Adventure Of Yangmal1.1/Adventure Of Yangmal.exe"

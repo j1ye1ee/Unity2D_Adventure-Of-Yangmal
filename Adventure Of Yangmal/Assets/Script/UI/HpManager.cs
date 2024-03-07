@@ -112,4 +112,16 @@ public class HpManager : MonoBehaviour
         SetfillAmount(fullHeartCount, lastHeartFill);
 
     }
+
+    public void HpManagerReset()
+    {
+        _hpCount = 3;
+
+        // 4번째 하트부터 setActive false
+        for (int count = 0; count < _hearts.Count - 3; count++)
+            _hearts[count + 3].gameObject.SetActive(false);
+
+        // 3번째 fillHeart _curHeart로 설정
+        _curHeart = _hearts[_hpCount - 1].transform.GetChild(0).gameObject;
+    }
 }

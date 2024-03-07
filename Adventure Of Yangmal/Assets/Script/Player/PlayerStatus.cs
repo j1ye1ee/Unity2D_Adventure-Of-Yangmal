@@ -24,7 +24,7 @@ public class PlayerStatus : Singleton<PlayerStatus>
     public float _damage { get; private set; }
 
     // 플레이어 방어력
-    public float _dex {get; private set;}
+    public float _def {get; private set;}
 
     // 플레이어 죽음 관련
     bool _isDoingDie = false;
@@ -88,7 +88,7 @@ public class PlayerStatus : Singleton<PlayerStatus>
         _hp = 60;
         _maxHp = 60;
         _damage = 10;
-        _dex = 0;
+        _def = 0;
 
     }
 
@@ -134,7 +134,7 @@ public class PlayerStatus : Singleton<PlayerStatus>
         _damageAudio.Play();
 
         // 플레이어 방어력 적용
-        damage = damage * (1f-_dex);
+        damage = damage * (1f- _def);
 
         // 플레이어가 스턴 상태라면 데미지를 받지 않게 한다.
         if (_isStun)
@@ -231,13 +231,13 @@ public class PlayerStatus : Singleton<PlayerStatus>
     // 플레이어 방어력 세팅
     public void PlayerDexSet(float dex)
     {
-        _dex = dex;
+        _def = dex;
     }
 
     // 플레이어 방어 업
     public void PlayerDexUp(float dex)
     {
-        _dex += dex;
+        _def += dex;
     }
 
     // 플레이어 투명도 초기화
@@ -261,7 +261,7 @@ public class PlayerStatus : Singleton<PlayerStatus>
         _hp = 60;
         _maxHp = 60;
         _damage = 10;
-        _dex = 0;
+        _def = 0;
         
         _isDoingDie = false;
         _isAttacked = false;
@@ -269,8 +269,25 @@ public class PlayerStatus : Singleton<PlayerStatus>
         _isStun = false;
 
         PlayerSpriteReset();
-        _hpManager.HeartSet();
+        _hpManager.HpManagerReset();
 
+
+    }
+
+    // 부활 치트키 메서드
+    public void PlayerReviveSet()
+    {
+        _curState = ePLAYER_STATE.ALIVE;
+
+        _hp = _maxHp;
+
+        _isDoingDie = false;
+        _isAttacked = false;
+        _isDoingStun = false;
+        _isStun = false;
+
+        PlayerSpriteReset();
+        _hpManager.HeartSet();
 
     }
 

@@ -22,8 +22,9 @@ public class ItemDamageUp : ShopItem, IPlayerItem
         Debug.Log(_damageUp + "만큼 공격력 상승");
 
         PlayerStatus playerStatus = PlayerStatus.Instance;
+        PlayerBulletPoolManager poolManager = PlayerBulletPoolManager.Instance;
 
-        // 공격력 up 아이템 사용시 플레이어의 최대 공격력을 넘게 된다면 maxDex로 설정
+        // 공격력 up 아이템 사용시 플레이어의 최대 공격력을 넘게 된다면 maxdamage로 설정
         if (playerStatus._damage + _damageUp >= _maxValue)
             playerStatus.DamageSet(_maxValue);
 
@@ -32,19 +33,16 @@ public class ItemDamageUp : ShopItem, IPlayerItem
         {
             playerStatus.DamageUp(_damageUp);
 
-            PlayerBulletPoolManager poolManager = PlayerBulletPoolManager.Instance;
-            
-            // 총알 pool 모두 데미지업
-            for (int i = 0; i < poolManager._playerBulletPool.Count; i++)
-                poolManager._playerBulletPool[i].GetComponent<PlayerBullet>()._damage += _damageUp;
+            // 총알 프리팹 데미지 업
+            poolManager._playerBulletPrefab.GetComponent<PlayerBullet>()._damage += _damageUp;
 
-            // 폭탄 pool 모두 데미지업
-            for (int i = 0; i < poolManager._bombPool.Count; i++)
-                poolManager._bombPool[i].GetComponent<Bomb>()._bombEffectPrefab.GetComponent<BombEffect>()._damage += _damageUp;
+            poolManager._bombPrefab.GetComponent<Bomb>()._bombEffectPrefab.GetComponent<PlayerBulletBase>()._damage += _damageUp;
 
-            // 미사일 pool 모두 데미지업
-            for (int i = 0; i < poolManager._guideMissilePool.Count; i++)
-                poolManager._guideMissilePool[i].GetComponent<GuideMissile>()._damage += _damageUp;
+            poolManager._guideMissilePrefab.GetComponent<GuideMissile>()._damage += _damageUp;
+
+
+            // 총알 풀 리셋
+            poolManager.DamageUpPoolSet();
 
             // ui 세팅
             UiManager.Instance.SetPlayerDamage();

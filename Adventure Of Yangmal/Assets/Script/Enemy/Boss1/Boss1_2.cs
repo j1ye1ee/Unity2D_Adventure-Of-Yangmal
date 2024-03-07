@@ -161,11 +161,11 @@ public class Boss1_2 : Boss
         }
 
 
-        // 5.5) 플레이어 죽음 검사 -- 플레이어 죽음 상태일때 FOLLOW 상태 진입
-        if (_playerStatus._curState == PlayerStatus.ePLAYER_STATE.DIE || _player == null)
-        {
-            _iState = eBOSS1_2STATE.FOLLOW;
-        }
+        //// 5.5) 플레이어 죽음 검사 -- 플레이어 죽음 상태일때 FOLLOW 상태 진입
+        //if (_playerStatus._curState == PlayerStatus.ePLAYER_STATE.DIE || _player == null)
+        //{
+        //    _iState = eBOSS1_2STATE.FOLLOW;
+        //}
 
 
 
