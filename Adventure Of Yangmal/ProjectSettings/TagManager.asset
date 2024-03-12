@@ -44,6 +44,7 @@ TagManager:
   - mainUI
   - Audio
   - wall
+  - Bomb
   layers:
   - Default
   - TransparentFX

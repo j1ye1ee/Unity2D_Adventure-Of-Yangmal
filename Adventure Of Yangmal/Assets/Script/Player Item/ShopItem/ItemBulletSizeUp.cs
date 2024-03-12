@@ -44,11 +44,10 @@ public class ItemBulletSizeUp : ShopItem, IPlayerItem
         // poolManager 의 playerbullet Prefab 바꾸기 완료
         _poolManager._playerBulletPrefab = _itemUseBullet;
 
-        // poolManager  내부의 playerbullet 오브젝트 전부 교체
-        for(int i=0; i<_poolManager._playerBulletPool.Count; i++)
-        {
-            _poolManager._playerBulletPool[i] = _itemUseBullet;
-        }
+        // poolManager 리셋
+        _poolManager.ItemUsePoolSet();
+
+        
 
     }
 

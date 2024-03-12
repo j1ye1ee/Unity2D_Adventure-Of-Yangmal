@@ -28,6 +28,7 @@ public class PlayerBulletPoolManager : PoolManager
     public GameObject _guideMissilePrefab;
     public List<GameObject> _guideMissilePool = new List<GameObject>();
 
+
     private void Awake()
     {
         if(instance == null)
@@ -46,6 +47,7 @@ public class PlayerBulletPoolManager : PoolManager
         InstantiatePool(_playerBulletPool, _playerBulletPrefab, 10);
         InstantiatePool(_bombPool, _bombPrefab, 5);
         InstantiatePool(_guideMissilePool, _guideMissilePrefab, 5);
+
     }
 
     // 프리팹 리셋
@@ -54,8 +56,7 @@ public class PlayerBulletPoolManager : PoolManager
         PlayerBullet playerBullet = _playerBulletPrefab.GetComponent<PlayerBullet>();
 
         // 프리팹 초기화 _총알
-        _playerBulletPrefab.gameObject.transform.localScale
-            = new Vector2(0.7f, 0.7f);
+        _playerBulletPrefab.transform.localScale = new Vector2(0.7f, 0.7f);
         _playerBulletPrefab.GetComponent<PlayerBullet>()._damage = 10;
 
         // 프리팹 초기화 _폭탄
@@ -66,67 +67,42 @@ public class PlayerBulletPoolManager : PoolManager
     }
 
 
+    //pool 내부 모두 삭제 & 리스트 삭제
+    public void ResetPoolList()
+    {
+        for(int i =0; i<gameObject.transform.childCount; i++)
+        {
+            GameObject obj = gameObject.transform.GetChild(i).gameObject;
+            Destroy(obj);
+        }
+        _playerBulletPool.Clear();
+        _bombPool.Clear();
+        _guideMissilePool.Clear();
+    }
 
 
     // 게임 재시작시 풀 초기화
     public void ResetAllBullet()
     {
         ResetPrefab();
-
-        // 총알 pool 모두 삭제
-        for (int i = 0; i < _playerBulletPool.Count; i++)
-        {
-            Destroy(_playerBulletPool[i].gameObject);
-        }
-
-
-        // 폭탄 pool 모두 삭제
-        for (int i = 0; i < _bombPool.Count; i++)
-        {
-            Destroy(_bombPool[i].gameObject);
-        }
-
-
-        // 미사일 pool 모두 삭제
-        for (int i = 0; i < _guideMissilePool.Count; i++)
-        {
-            Destroy(_guideMissilePool[i].gameObject);
-        }
+        ResetPoolList();
 
         // 재생성
         InstantiatePool(_playerBulletPool, _playerBulletPrefab, 10);
         InstantiatePool(_bombPool, _bombPrefab, 5);
-        InstantiatePool(_guideMissilePool, _guideMissilePrefab, 5);
-
+        InstantiatePool(_guideMissilePool, _guideMissilePrefab,5);
     }
 
-    // 데미지업 아이템 사용시 풀 초기화
-    public void DamageUpPoolSet()
+    // 아이템 사용시 풀 재설정
+    public void ItemUsePoolSet()
     {
-
-        // 총알 pool 모두 삭제
-        for (int i = 0; i < _playerBulletPool.Count; i++)
-        {
-            Destroy(_playerBulletPool[i].gameObject);
-        }
-
-
-        // 폭탄 pool 모두 삭제
-        for (int i = 0; i < _bombPool.Count; i++)
-        {
-            Destroy(_bombPool[i].gameObject);
-        }
-
-
-        // 미사일 pool 모두 삭제
-        for (int i = 0; i < _guideMissilePool.Count; i++)
-        {
-            Destroy(_guideMissilePool[i].gameObject);
-        }
+        ResetPoolList();
 
         // 재생성
-        ResetPool(_playerBulletPool, _playerBulletPrefab, 10);
-        ResetPool(_bombPool, _bombPrefab, 5);
-        ResetPool(_guideMissilePool, _guideMissilePrefab, 5);
+        InstantiatePool(_playerBulletPool, _playerBulletPrefab, 10);
+        InstantiatePool(_bombPool, _bombPrefab, 5);
+        InstantiatePool(_guideMissilePool, _guideMissilePrefab,5);
     }
+
+
 }

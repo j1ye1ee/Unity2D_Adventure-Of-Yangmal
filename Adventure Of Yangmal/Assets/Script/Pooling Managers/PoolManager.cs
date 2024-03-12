@@ -17,18 +17,6 @@ public class PoolManager : MonoBehaviour
 
     }
 
-    // pool √ ±‚»≠
-    public void ResetPool(List<GameObject> pool, GameObject prefab, int count)
-    {
-        for(int i = 0; i< count; i++)
-        {
-            GameObject obj = Instantiate(prefab);
-            obj.transform.parent = transform;
-            obj.gameObject.SetActive(false);
-            pool[i] = obj;
-        }
-    }
-
     public GameObject GetObject(List<GameObject> pool, GameObject prefab, Vector3 position, Quaternion rotation)
     {
         GameObject gameObj = null;

@@ -42,7 +42,7 @@ public class ItemDamageUp : ShopItem, IPlayerItem
 
 
             // 총알 풀 리셋
-            poolManager.DamageUpPoolSet();
+            poolManager.ItemUsePoolSet();
 
             // ui 세팅
             UiManager.Instance.SetPlayerDamage();

@@ -15,6 +15,8 @@ public class Bomb : MonoBehaviour
     Color _originColor;
     Color _blinkColor;
 
+
+
     private void Awake()
     {
         // 원활한 발사를 위해 콜라이더 끄기
@@ -76,7 +78,7 @@ public class Bomb : MonoBehaviour
     public IEnumerator BombEffect()
     {
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.05f);
         _collider.enabled = true;
 
         yield return new WaitForSeconds(1f);
@@ -112,7 +114,6 @@ public class Bomb : MonoBehaviour
         _blinkTime = 5f;
         _myRigid.constraints = RigidbodyConstraints2D.None;
         gameObject.SetActive(false);
-     
     }
 
 
@@ -121,5 +122,15 @@ public class Bomb : MonoBehaviour
         // 월드 벽에 충돌시 정지 (벽 뚫고 나가기 방지)
         if(other.gameObject.tag == "World" || other.gameObject.tag == "wall")
             _myRigid.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    // bomb SetActive 시 초기화
+    public void BombSetActiveFasle()
+    {
+        GameObject.FindWithTag("Player").GetComponent<PlayerShooter>().StopAllCoroutines();
+        _sprite.color = _originColor;
+        _blinkTime = 5f;
+        _myRigid.constraints = RigidbodyConstraints2D.None;
+        gameObject.SetActive(false);
     }
 }

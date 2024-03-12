@@ -138,6 +138,7 @@ public class Boss2Move : MonoBehaviour
         // 벽부수기 완료 후 지정위치까지 앞으로 전진
         else if (_isDoneCrushWall)
             StartCoroutine(MoveToPoint());
+
     }
 
 
@@ -257,6 +258,14 @@ public class Boss2Move : MonoBehaviour
 
 
         Debug.Log("page2 진입");
+
+        // 벽돌 상태 바꾸기 
+        GameObject bricks = GameObject.FindWithTag("Boss2Wall");
+        for (int index = 0; index < bricks.transform.childCount; index++)
+        {
+            GameObject brick = bricks.transform.GetChild(index).gameObject;
+            brick.GetComponent<Boss2Bricks>()._eState = Boss2Bricks.eBRICKSTATE.AFTER_PAGE2;
+        }
 
     }
 

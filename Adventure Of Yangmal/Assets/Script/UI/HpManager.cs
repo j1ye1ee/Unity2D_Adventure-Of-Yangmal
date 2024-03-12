@@ -123,5 +123,7 @@ public class HpManager : MonoBehaviour
 
         // 3번째 fillHeart _curHeart로 설정
         _curHeart = _hearts[_hpCount - 1].transform.GetChild(0).gameObject;
+
+        HeartSet();
     }
 }

@@ -154,12 +154,7 @@ public class GuideMissile : PlayerBulletBase
         Destroy(missileEffect);
 
         // 미사일 setActive(false) & 모든 설정 초기화
-        gameObject.SetActive(false);
-        _destroyTimeCheck = 0;
-        _sprite.color = _originColor;
-        _isDoingEffect = false;
-        _isCollision = false;
-        _curState = eGUIDEMISSILE_STATE.DETACT;
+        MissileSetActiveFasle();
 
 
     }
@@ -176,5 +171,16 @@ public class GuideMissile : PlayerBulletBase
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, a);
             yield return new WaitForSeconds(0.05f);
         }
+    }
+
+    // 미사일 setActive시 초기화
+    public void MissileSetActiveFasle()
+    {
+        _destroyTimeCheck = 0;
+        _sprite.color = _originColor;
+        _isDoingEffect = false;
+        _isCollision = false;
+        _curState = eGUIDEMISSILE_STATE.DETACT;
+        gameObject.SetActive(false);
     }
 }

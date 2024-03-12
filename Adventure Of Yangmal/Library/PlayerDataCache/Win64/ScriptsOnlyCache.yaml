@@ -18,6 +18,7 @@ ScriptsOnlyBuild:
     - Boss1_StageManager
     - Boss2
     - Boss2Attack
+    - Boss2Bricks
     - Boss2Bullet
     - Boss2Bullet4
     - Boss2Bullet4Count
@@ -129,6 +130,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -177,8 +179,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -733,6 +737,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 8088}
     - Class: 114
       Script: {instanceID: 8212}
+    - Class: 114
+      Script: {instanceID: 25476}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -3987,6 +3993,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Boss1_1
+  - hash:
+      serializedVersion: 2
+      Hash: 649c38ff8babffc9ac5b4e434ea6475d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Boss2Bricks
   platform: 19
   scenePathNames:
   - Assets/Scenes/MainScene.unity
@@ -4005,4 +4017,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Boss2.unity
   - Assets/Scenes/EndingScene.unity
   playerPath: "C:/Users/suji1/OneDrive/\uBC14\uD0D5 \uD654\uBA74/\uC9C0\uC608\uC7A1\uB3D9\uC0AC\uB2C8/\uC644\uC131\uD55C
-    \uAC8C\uC784/Adventure Of Yangmal1.1/Adventure Of Yangmal.exe"
+    \uAC8C\uC784/Adventure Of Yangmal1.2/Adventure Of Yangmal.exe"
