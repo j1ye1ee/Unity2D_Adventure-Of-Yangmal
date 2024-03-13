@@ -2559,8 +2559,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shakePower: 0.05
   _shakeTime: 0.5
-  _curShakeTime: 0
   _isCameraShakeStart: 0
+  _isCameraShaking: 0
 --- !u!114 &816388618
 MonoBehaviour:
   m_ObjectHideFlags: 0

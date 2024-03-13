@@ -206,8 +206,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shakePower: 0.05
   _shakeTime: 0.5
-  _curShakeTime: 0
   _isCameraShakeStart: 0
+  _isCameraShaking: 0
 --- !u!81 &22909929
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4079,12 +4079,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2141940503}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dddd3ffb7a6ac6148b3ebf6e23e75d66, type: 3}
+  m_Script: {fileID: 11500000, guid: 63b3c5e83954e6e459c451010ad6dbb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _stageName: "\uB450 \uBC88\uC9F8 \uAC15\uC544\uC9C0\uAD74"
-  _mainCanvas: {fileID: 0}
-  _playerBulletPool: {fileID: 0}
 --- !u!4 &2141940505
 Transform:
   m_ObjectHideFlags: 0

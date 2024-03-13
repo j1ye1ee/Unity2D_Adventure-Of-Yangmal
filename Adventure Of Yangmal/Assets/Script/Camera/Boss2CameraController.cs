@@ -69,6 +69,12 @@ public class Boss2CameraController : MainCameraMove
             yield return null;
         }
 
+        // 카메라 쉐이크 관련 정지
+        GetComponent<CameraShake>()._isCameraShaking = false;
+        GetComponent<CameraShake>()._isCameraShakeStart = false;
+        GetComponent<CameraShake>().enabled = false;
+
+
     }
 
     IEnumerator CameraSizeUp()
@@ -85,7 +91,6 @@ public class Boss2CameraController : MainCameraMove
             GetComponent<Camera>().orthographicSize = size;
             yield return null;
         }
-
     }
 
 

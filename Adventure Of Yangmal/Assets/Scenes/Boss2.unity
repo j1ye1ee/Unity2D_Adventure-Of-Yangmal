@@ -8108,14 +8108,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3c5a361400036940808e48f7ebff28e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 5
+  _moveSpeed: 10
   _originSpeed: 0
   _isWall: 0
   _isOriginPosition: 0
   _isGoal: 0
   _isDoingPage2Move: 0
   _page2MoveTime: 0
-  _endMoveTime: 3
+  _endMoveTime: 2
   _square4: {fileID: 0}
   _clushWallSound: {fileID: 1748784774}
 --- !u!70 &1748784769

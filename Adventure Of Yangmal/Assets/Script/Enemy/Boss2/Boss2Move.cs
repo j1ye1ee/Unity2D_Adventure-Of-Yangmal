@@ -56,13 +56,20 @@ public class Boss2Move : MonoBehaviour
             case Boss2_StageManager.eSTAGE_STATE.NONE:
                 NormalMove();
                 break;
+
+            case Boss2_StageManager.eSTAGE_STATE.ALLSPAWNERDEAD:
+                NormalMove();
+                break;
+
             case Boss2_StageManager.eSTAGE_STATE.PAGE1CLEAR:
                 _checkPauseTime += Time.deltaTime;
                 StartPage2Move();
+
                 break;
             case Boss2_StageManager.eSTAGE_STATE.PAGE2:
                 FollowMove();
                 break;
+
             case Boss2_StageManager.eSTAGE_STATE.STAGECLEAR:
                 break;
         }
@@ -155,7 +162,7 @@ public class Boss2Move : MonoBehaviour
         // 플레이어  콜라이더 끄기 & 움직이지 못하게 하기(무빙중 플레이어에게 해를 끼치지 않기 위함)
         _player.GetComponent<Collider2D>().enabled = false;
         _originPlayerMoveSpeed = _player.GetComponent<PlayerMove>()._moveSpeed;
-        _player.GetComponent<PlayerMove>()._moveSpeed = 0f;
+        _player.GetComponent<PlayerMove>()._moveSpeed = 0;
 
 
         // 0) origin position 으로 이동
@@ -252,7 +259,7 @@ public class Boss2Move : MonoBehaviour
         // 포인트까지 이동 & 카메라 모드전환 완료시 stage 상태 변경
         _stageManager._curState = Boss2_StageManager.eSTAGE_STATE.PAGE2;
 
-        // 플레이어  콜라이더 켜기 & 스피드 원복
+        // 플레이어  콜라이더 켜기
         _player.GetComponent<Collider2D>().enabled = true;
         _player.GetComponent<PlayerMove>()._moveSpeed = _originPlayerMoveSpeed;
 

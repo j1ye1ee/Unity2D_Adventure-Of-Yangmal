@@ -44,10 +44,8 @@ public class PlayerBulletPoolManager : PoolManager
 
 
         // 각 pool 생성
-        InstantiatePool(_playerBulletPool, _playerBulletPrefab, 10);
-        InstantiatePool(_bombPool, _bombPrefab, 5);
-        InstantiatePool(_guideMissilePool, _guideMissilePrefab, 5);
-
+        if (!GameManager.Instance._isGameOver && !GameManager.Instance._isReplay)
+            InstaniatePlayerBulletPool();
     }
 
     // 프리팹 리셋
@@ -84,24 +82,28 @@ public class PlayerBulletPoolManager : PoolManager
     // 게임 재시작시 풀 초기화
     public void ResetAllBullet()
     {
+        // 프리팹 리셋
         ResetPrefab();
+        // 풀리스트 리셋
         ResetPoolList();
+    }
 
-        // 재생성
+    // 풀 생성
+    public void InstaniatePlayerBulletPool()
+    {
         InstantiatePool(_playerBulletPool, _playerBulletPrefab, 10);
         InstantiatePool(_bombPool, _bombPrefab, 5);
-        InstantiatePool(_guideMissilePool, _guideMissilePrefab,5);
+        InstantiatePool(_guideMissilePool, _guideMissilePrefab, 5);
     }
 
     // 아이템 사용시 풀 재설정
     public void ItemUsePoolSet()
     {
+        // 풀리스트 리셋
         ResetPoolList();
 
         // 재생성
-        InstantiatePool(_playerBulletPool, _playerBulletPrefab, 10);
-        InstantiatePool(_bombPool, _bombPrefab, 5);
-        InstantiatePool(_guideMissilePool, _guideMissilePrefab,5);
+        InstaniatePlayerBulletPool();
     }
 
 

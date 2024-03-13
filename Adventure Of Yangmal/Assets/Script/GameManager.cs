@@ -31,4 +31,33 @@ public class GameManager : Singleton<GameManager>
         Debug.Log(isTrue+"°ÔÀÓ¿À¹ö¼¼ÆÃ");
         _isGameOver = isTrue;
     }
+
+    // ¾À ³Ñ¾î°¥¶§ ÆøÅº & ¹Ì»çÀÏ & ÃÑ¾Ë setActiveFalse
+    public void SceneChangeBulletDestroy()
+    {
+        GameObject pool = PlayerBulletPoolManager.Instance.gameObject;
+
+        for (int i = 0; i < pool.transform.childCount; i++)
+        {
+            GameObject bullet = pool.transform.GetChild(i).gameObject;
+
+            if (bullet.activeSelf)
+            {
+                if (bullet.GetComponent<Bomb>() != null)
+                {
+                    bullet.GetComponent<Bomb>().StopAllCoroutines();
+                    bullet.GetComponent<Bomb>().BombSetActiveFasle();
+                }
+
+                else if (bullet.GetComponent<GuideMissile>() != null)
+                {
+                    bullet.GetComponent<GuideMissile>().StopAllCoroutines();
+                    bullet.GetComponent<GuideMissile>().MissileSetActiveFasle();
+                }
+
+                else
+                    bullet.SetActive(false);
+            }
+        }
+    }
 }

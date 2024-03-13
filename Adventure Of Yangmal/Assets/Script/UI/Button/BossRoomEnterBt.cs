@@ -21,6 +21,7 @@ public class BossRoomEnterBt : BaseButton
     // ok
     public override void OkButton()
     {
+        GameManager.Instance.SceneChangeBulletDestroy();
         StartCoroutine(EnterToNextScene(_nextScene));
     }
 

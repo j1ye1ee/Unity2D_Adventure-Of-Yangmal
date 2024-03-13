@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
@@ -15,7 +14,7 @@ public class Bomb : MonoBehaviour
     Color _originColor;
     Color _blinkColor;
 
-
+    GameObject _curBombEffect;
 
     private void Awake()
     {
@@ -44,6 +43,7 @@ public class Bomb : MonoBehaviour
     // 깜박이는 효과
     IEnumerator Blink()
     {
+
         float time = 1f;
 
         while (_blinkTime >= 0)
@@ -58,6 +58,7 @@ public class Bomb : MonoBehaviour
         }
 
         _sprite.color = _destroyColor;
+
     }
 
     // 이펙트 페이드아웃
@@ -66,7 +67,7 @@ public class Bomb : MonoBehaviour
         float a = 1f;
         SpriteRenderer sprite = effect.GetComponent<SpriteRenderer>();
 
-        while( a >= 0)
+        while (a >= 0)
         {
             a -= 0.05f;
             sprite.color = new Color(sprite.color.r, sprite.color.g, sprite.color.b, a);
@@ -99,7 +100,7 @@ public class Bomb : MonoBehaviour
 
         // 3) 이펙트 생성
         GameObject bombEffect = Instantiate(_bombEffectPrefab, transform.position, transform.rotation); //이펙트생성
-
+        _curBombEffect = bombEffect;
 
         // 4) 페이드아웃 후 콜라이더 끄기
         yield return new WaitForSeconds(1f);
@@ -114,19 +115,28 @@ public class Bomb : MonoBehaviour
         _blinkTime = 5f;
         _myRigid.constraints = RigidbodyConstraints2D.None;
         gameObject.SetActive(false);
+
+        GameObject _curEffect = _curBombEffect;
+        Destroy(_curEffect);
     }
 
 
     public void OnCollisionEnter2D(Collision2D other)
     {
         // 월드 벽에 충돌시 정지 (벽 뚫고 나가기 방지)
-        if(other.gameObject.tag == "World" || other.gameObject.tag == "wall")
+        if (other.gameObject.tag == "World" || other.gameObject.tag == "wall")
             _myRigid.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     // bomb SetActive 시 초기화
     public void BombSetActiveFasle()
     {
+        if (_curBombEffect != null)
+        {
+            GameObject _curEffect = _curBombEffect;
+            Destroy(_curEffect);
+        }
+
         GameObject.FindWithTag("Player").GetComponent<PlayerShooter>().StopAllCoroutines();
         _sprite.color = _originColor;
         _blinkTime = 5f;

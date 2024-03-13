@@ -20,6 +20,10 @@ public class StageClearUiEnter : UiEffect
 
     IEnumerator EnterToNextScene(string name)
     {
+        Time.timeScale = 1;
+        // 남은 공격에 플레이어가 당하지 않도록 처리 취소
+        PlayerStatus.Instance.gameObject.GetComponent<Collider2D>().enabled = true;
+
         _isStartCoroutine = true;
         StartCoroutine(FadeOut());
         yield return new WaitUntil(() => _isFadeOutEnd == true);

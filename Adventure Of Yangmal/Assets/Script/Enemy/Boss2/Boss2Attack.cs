@@ -274,16 +274,13 @@ public class Boss2Attack : MonoBehaviour
 
 
 
-    // 공격패턴 5 : 정지 후 부채꼴
+    // 공격패턴 5 : 부채꼴
     IEnumerator Pattern5()
     {
         _sound.PlayOneShot(_sound.clip);
 
         _isDoingAttack = true;
         _shootTerm = 0.3f;
-
-        // 정지
-        _move._moveSpeed = 0;
 
         // 발사 위치 지정
         Vector2 position1 = new Vector2(transform.position.x - 1f, transform.position.y);
@@ -358,7 +355,6 @@ public class Boss2Attack : MonoBehaviour
 
         // while 문 탈출 후 패턴체크시간 초기화 & 스피드 초기화 & 랜덤셋
         _patternChangeTermCheck = 0f;
-        _move._moveSpeed = _move._originSpeed;
         _isDoingAttack = false;
         _attack = RandomPatternSet();
 

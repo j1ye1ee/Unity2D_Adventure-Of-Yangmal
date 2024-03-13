@@ -35,7 +35,7 @@ public class GuideMissile : PlayerBulletBase
     float _destroyTime = 5f;
     public float _destroyTimeCheck;
 
-
+    GameObject _curMissileEffect;
 
     private void Start()
     {
@@ -144,6 +144,9 @@ public class GuideMissile : PlayerBulletBase
         // 이펙트 생성
         GameObject missileEffect = Instantiate(_missileEffectPrefab, transform.position, transform.rotation);
         Debug.Log("미사일 이펙트 생성");
+
+        _curMissileEffect = missileEffect;
+
         // 이펙트 페이드아웃
         yield return new WaitForSeconds(1f);
         StartCoroutine(EffectFadeOut(missileEffect));
@@ -152,6 +155,9 @@ public class GuideMissile : PlayerBulletBase
 
         // 관련 오브젝트 삭제
         Destroy(missileEffect);
+
+        GameObject curEffect = _curMissileEffect;
+        Destroy(curEffect);
 
         // 미사일 setActive(false) & 모든 설정 초기화
         MissileSetActiveFasle();
@@ -176,6 +182,12 @@ public class GuideMissile : PlayerBulletBase
     // 미사일 setActive시 초기화
     public void MissileSetActiveFasle()
     {
+        if (_curMissileEffect != null)
+        {
+            GameObject curEffect = _curMissileEffect;
+            Destroy(curEffect);
+        }
+
         _destroyTimeCheck = 0;
         _sprite.color = _originColor;
         _isDoingEffect = false;

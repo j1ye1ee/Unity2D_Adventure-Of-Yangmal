@@ -24,6 +24,10 @@ public class ReviveKey : MonoBehaviour
     void Revive()
     {
         PlayerStatus.Instance.PlayerReviveSet();
+
+        if (PlayerStatus.Instance != null)
+            PlayerStatus.Instance.gameObject.GetComponent<Collider2D>().enabled = true;
+
         GameManager.Instance.SetIsGameOver(false);
     }
 }

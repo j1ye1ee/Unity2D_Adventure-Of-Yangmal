@@ -25,6 +25,7 @@ public class UiManager : Singleton<UiManager>
     {
         PlayerMove playerMove = player.GetComponent<PlayerMove>();
         _originSpeed = playerMove._moveSpeed;
+        Debug.Log("플레이어 원래 속도" + _originSpeed);
         playerMove._moveSpeed = 0;
 
         player.GetComponent<Animator>().enabled = false;
@@ -33,9 +34,11 @@ public class UiManager : Singleton<UiManager>
     //  플레이어 원상복구
     public void ReturnPlayer(GameObject player)
     {
+        PlayerStatus.Instance.gameObject.GetComponent<Collider2D>().enabled = true;
         PlayerMove playerMove = player.GetComponent<PlayerMove>();
         playerMove._moveSpeed = _originSpeed;
 
+        Debug.Log("플레이어 속도 복구");
         player.GetComponent<Animator>().enabled = true;
     }
 

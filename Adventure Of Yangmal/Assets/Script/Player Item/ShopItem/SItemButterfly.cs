@@ -30,7 +30,7 @@ public class SItemButterfly : ShopItem, IPlayerItem
                 (_butterflyPrefab,
                 playerItemManager.gameObject.transform.position,
                 playerItemManager.gameObject.transform.rotation);
-            butterfly.transform.parent = PlayerBulletPoolManager.Instance.gameObject.transform;
+            butterfly.transform.parent = GameManager.Instance.gameObject.transform;
         }
 
         else

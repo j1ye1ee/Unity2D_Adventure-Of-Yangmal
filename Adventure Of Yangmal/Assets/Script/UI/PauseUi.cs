@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseUi : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class PauseUi : MonoBehaviour
             _firstBt.Select();
             Time.timeScale = 0;
         }
+
+        if (Input.GetKeyDown(KeyCode.F1))
+            SceneManager.LoadScene("Boss1");
+
+        if(Input.GetKeyDown(KeyCode.F2))
+            SceneManager.LoadScene("Boss2");
+
     }
 
 

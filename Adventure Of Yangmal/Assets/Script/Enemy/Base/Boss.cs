@@ -171,7 +171,9 @@ public class Boss : MonoBehaviour
     // 공격받았을시 보스의 hp 차감 & 카메라쉐이킹
     public void BossGetDamage(float damage)
     {
-        GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>()._isCameraShakeStart = true;
+        if(GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>().enabled)
+             GameObject.FindWithTag("MainCamera").GetComponent<CameraShake>()._isCameraShakeStart = true;
+
         _hp -= damage;
     }
 

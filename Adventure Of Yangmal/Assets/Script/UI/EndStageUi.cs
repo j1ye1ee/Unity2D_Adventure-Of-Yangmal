@@ -17,8 +17,17 @@ public class EndStageUi : MonoBehaviour
     public Button _firstButton;
 
 
+
+
     public IEnumerator Flow()
     {
+        // 플레이어 정지
+        UiManager.Instance.StopPlayer(PlayerStatus.Instance.gameObject);
+
+        // 남은 공격에 플레이어가 당하지 않도록 처리
+        if(PlayerStatus.Instance != null)
+            PlayerStatus.Instance.gameObject.GetComponent<Collider2D>().enabled = false;
+
         // 배경 페이드인
         if (_backGround != null)
         {

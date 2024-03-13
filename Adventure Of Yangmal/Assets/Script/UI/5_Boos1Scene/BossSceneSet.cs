@@ -15,5 +15,13 @@ public class BossSceneSet : SceneSetting
         
         // stageName set
         UiManager.Instance.SetStageText(_stageName);
+
+        // 플레이어 콜라이더 true
+        PlayerStatus.Instance.gameObject.GetComponent<Collider2D>().enabled = true;
+
+        // 플레이어 위치 재설정
+        PlayerTrsfReset();
+
+        UiManager.Instance.ReturnPlayer(PlayerStatus.Instance.gameObject);
     }
 }
