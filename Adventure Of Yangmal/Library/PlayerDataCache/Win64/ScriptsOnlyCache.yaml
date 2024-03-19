@@ -130,11 +130,8 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
-    - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -4025,4 +4022,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Boss2.unity
   - Assets/Scenes/EndingScene.unity
   playerPath: "C:/Users/suji1/OneDrive/\uBC14\uD0D5 \uD654\uBA74/\uC9C0\uC608\uC7A1\uB3D9\uC0AC\uB2C8/\uC644\uC131\uD55C
-    \uAC8C\uC784/Adventure Of Yangmal1.2/Adventure Of Yangmal.exe"
+    \uAC8C\uC784/Adventure Of Yangmal1.3/Adventure Of Yangmal.exe"
