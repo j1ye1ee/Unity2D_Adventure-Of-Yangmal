@@ -256,6 +256,8 @@ public class PlayerStatus : Singleton<PlayerStatus>
     // PlayerStatus class 관련 상태 초기화
     public void PlayerStatusAllReset()
     {
+        GetComponent<Animator>().enabled = true;
+
         _curState = ePLAYER_STATE.ALIVE;
 
         _hp = 60;
@@ -278,6 +280,7 @@ public class PlayerStatus : Singleton<PlayerStatus>
     public void PlayerReviveSet()
     {
         _curState = ePLAYER_STATE.ALIVE;
+        UiManager.Instance.ReturnPlayer(this.gameObject);
 
         _hp = _maxHp;
 

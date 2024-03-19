@@ -8115,7 +8115,7 @@ MonoBehaviour:
   _isGoal: 0
   _isDoingPage2Move: 0
   _page2MoveTime: 0
-  _endMoveTime: 2
+  _endMoveTime: 1
   _square4: {fileID: 0}
   _clushWallSound: {fileID: 1748784774}
 --- !u!70 &1748784769
@@ -8171,8 +8171,8 @@ MonoBehaviour:
   _isDead: 0
   _spriteRenderer: {fileID: 0}
   _isDoingDie: 0
-  _hp: 200
-  _damage: 0
+  _hp: 300
+  _damage: 20
   _isStun: 0
   _isDoingStun: 0
   _playerStatus: {fileID: 0}

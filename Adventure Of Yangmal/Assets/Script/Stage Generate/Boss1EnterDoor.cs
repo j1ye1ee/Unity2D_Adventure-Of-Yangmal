@@ -29,8 +29,6 @@ public class Boss1EnterDoor : MonoBehaviour
             // 오브젝트 콜라이더 끄기
             gameObject.GetComponent<Collider2D>().enabled = false;
 
-            // 플레이어 스탑
-            UiManager.Instance.StopPlayer(_player);
         }
 
     }
