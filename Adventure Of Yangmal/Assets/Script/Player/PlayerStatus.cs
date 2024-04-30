@@ -36,8 +36,6 @@ public class PlayerStatus : Singleton<PlayerStatus>
     bool _isDoingStun = false;
     public bool _isStun = false;
 
-    public Vector2 _afterAttackedDir;
-
     // 플레이어 효과음
     public AudioSource _damageAudio;
 
